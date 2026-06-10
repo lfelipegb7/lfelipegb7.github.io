@@ -1,409 +1,394 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Peixaria Mar do Sertão | Umirim - CE</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loyalty Jiu-Jitsu | Uruburetama-CE</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Variáveis de Cores */
+        :root {
+            --primary-color: #d4af37; /* Dourado/Ouro (Loyalty) */
+            --secondary-color: #1a1a1a; /* Preto fosco */
+            --text-light: #ffffff;
+            --text-dark: #333333;
+            --bg-gray: #f4f4f4;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
 
-html{
-    scroll-behavior:smooth;
-}
+        /* Header / Nav */
+        header {
+            background-color: var(--secondary-color);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--primary-color);
+        }
 
-body{
-    color:#333;
-    background:#fff;
-}
+        .logo {
+            color: var(--primary-color);
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
 
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
 
-/* HEADER */
-header{
-    position:fixed;
-    width:100%;
-    top:0;
-    z-index:1000;
-    background:rgba(0,86,125,.95);
-    backdrop-filter:blur(8px);
-}
+        nav ul li {
+            margin-left: 20px;
+        }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 0;
-}
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
 
-.logo{
-    color:#fff;
-    font-size:1.5rem;
-    font-weight:700;
-}
+        nav ul li a:hover {
+            color: var(--primary-color);
+        }
 
-.menu{
-    display:flex;
-    gap:25px;
-}
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                        url('https://images.unsplash.com/photo-1555597673-b21d5c935865?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); /* Imagem genérica de luta */
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
 
-.menu a{
-    color:#fff;
-    text-decoration:none;
-    font-weight:500;
-}
+        .hero h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
 
-.btn{
-    display:inline-block;
-    background:#00c897;
-    color:#fff;
-    padding:14px 28px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.3s;
-}
+        .hero h1 span {
+            color: var(--primary-color);
+        }
 
-.btn:hover{
-    transform:translateY(-2px);
-}
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
 
-/* HERO */
-.hero{
-    min-height:100vh;
-    background:
-    linear-gradient(rgba(0,45,66,.7), rgba(0,45,66,.7)),
-    url("https://images.unsplash.com/photo-1544943910-4c1dc44aab44?auto=format&fit=crop&w=1600&q=80");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-    color:#fff;
-}
+        .cta-button {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 15px 40px;
+            text-decoration: none;
+            font-weight: 900;
+            border-radius: 5px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
 
-.hero-content{
-    max-width:700px;
-}
+        .cta-button:hover {
+            background-color: white;
+            transform: scale(1.05);
+        }
 
-.hero h1{
-    font-size:3.5rem;
-    line-height:1.2;
-    margin-bottom:20px;
-}
+        /* Seções Gerais */
+        section {
+            padding: 80px 10%;
+        }
 
-.hero p{
-    font-size:1.1rem;
-    margin-bottom:30px;
-}
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
 
-/* SOBRE */
-.section{
-    padding:90px 0;
-}
+        .section-title h2 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
 
-.section-title{
-    text-align:center;
-    margin-bottom:50px;
-}
+        .section-title h2::after {
+            content: '';
+            width: 50%;
+            height: 4px;
+            background: var(--primary-color);
+            position: absolute;
+            bottom: -10px;
+            left: 25%;
+        }
 
-.section-title h2{
-    font-size:2.2rem;
-    color:#00567d;
-}
+        /* Cards Modalidades */
+        .grid-modalidades {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:40px;
-    align-items:center;
-}
+        .card {
+            background: var(--bg-gray);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            transition: 0.3s;
+            border-bottom: 4px solid transparent;
+        }
 
-.about img{
-    width:100%;
-    border-radius:20px;
-}
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+        }
 
-.about-text p{
-    margin-bottom:15px;
-    line-height:1.8;
-}
+        .card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
 
-/* PRODUTOS */
-.products{
-    background:#f7fbfd;
-}
+        /* Horários Table */
+        .horarios-container {
+            overflow-x: auto;
+        }
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
 
-.card{
-    background:#fff;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+        th, td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+        }
 
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
+        th {
+            background-color: var(--secondary-color);
+            color: white;
+        }
 
-.card-content{
-    padding:20px;
-}
+        /* Contato */
+        .contato-info {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
 
-.card h3{
-    margin-bottom:10px;
-    color:#00567d;
-}
+        .info-box {
+            flex: 1;
+            min-width: 280px;
+        }
 
-/* DIFERENCIAIS */
-.features{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
+        .info-box h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
 
-.feature{
-    text-align:center;
-    padding:30px;
-    background:#fff;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.05);
-}
+        /* WhatsApp Floating Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+        }
 
-.feature span{
-    font-size:3rem;
-}
+        /* Footer */
+        footer {
+            background: var(--secondary-color);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
 
-/* CTA */
-.cta{
-    background:linear-gradient(135deg,#00567d,#0088c2);
-    color:#fff;
-    text-align:center;
-}
-
-.cta h2{
-    margin-bottom:20px;
-    font-size:2.2rem;
-}
-
-.cta p{
-    margin-bottom:30px;
-}
-
-/* FOOTER */
-footer{
-    background:#022b3a;
-    color:#fff;
-    text-align:center;
-    padding:30px;
-}
-
-footer p{
-    opacity:.8;
-}
-
-/* RESPONSIVO */
-@media(max-width:768px){
-
-    .menu{
-        display:none;
-    }
-
-    .hero h1{
-        font-size:2.4rem;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-    }
-}
-</style>
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Simplificação para o exemplo */
+            .contato-info { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <div class="container">
+    <!-- Header -->
+    <header>
+        <div class="logo">Loyalty</div>
         <nav>
-            <div class="logo">🐟 Peixaria Mar do Sertão</div>
-
-            <div class="menu">
-                <a href="#sobre">Sobre</a>
-                <a href="#produtos">Produtos</a>
-                <a href="#contato">Contato</a>
-            </div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#modalidades">Modalidades</a></li>
+                <li><a href="#horarios">Horários</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
         </nav>
-    </div>
-</header>
+    </header>
 
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1>Peixes e Frutos do Mar Fresquinhos em Umirim</h1>
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>LOYALTY <span>JIU-JITSU</span></h1>
+        <p>Respeito, Disciplina e Lealdade. A melhor escola de artes marciais de Uruburetama-CE está pronta para receber você.</p>
+        <a href="#contato" class="cta-button">Agende uma Aula Experimental</a>
+    </section>
 
-            <p>
-                Qualidade, procedência e sabor para sua mesa.
-                Trabalhamos com peixes frescos, camarões, filés e frutos do mar selecionados.
-            </p>
-
-            <a href="https://wa.me/5585999999999" class="btn">
-                Fazer Pedido pelo WhatsApp
-            </a>
-        </div>
-    </div>
-</section>
-
-<section id="sobre" class="section">
-    <div class="container">
-
+    <!-- Sobre -->
+    <section id="sobre">
         <div class="section-title">
-            <h2>Quem Somos</h2>
+            <h2>Nossa Academia</h2>
         </div>
-
-        <div class="about">
-            <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1000&q=80" alt="Peixaria">
-
-            <div class="about-text">
-                <p>
-                    A Peixaria Mar do Sertão atende Umirim e região com
-                    produtos frescos e selecionados diariamente.
-                </p>
-
-                <p>
-                    Nosso compromisso é oferecer qualidade,
-                    higiene e atendimento diferenciado para
-                    clientes, restaurantes e comerciantes locais.
-                </p>
-
-                <p>
-                    Trabalhamos com diversas espécies de peixes,
-                    camarão, lagosta e frutos do mar sob encomenda.
-                </p>
-            </div>
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+            <p>A <strong>Loyalty Jiu-Jitsu</strong> em Uruburetama é mais que uma academia, é uma família. Nosso foco é o desenvolvimento técnico, físico e mental de nossos alunos, utilizando o Jiu-Jitsu como ferramenta de transformação pessoal. Seja para competição ou defesa pessoal, aqui é o seu lugar.</p>
         </div>
+    </section>
 
-    </div>
-</section>
-
-<section id="produtos" class="section products">
-
-    <div class="container">
-
+    <!-- Modalidades -->
+    <section id="modalidades" style="background-color: #fff;">
         <div class="section-title">
-            <h2>Nossos Produtos</h2>
+            <h2>O que Treinar</h2>
         </div>
-
-        <div class="cards">
-
+        <div class="grid-modalidades">
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1615141982883-c7ad0e69fd62?auto=format&fit=crop&w=800&q=80">
-                <div class="card-content">
-                    <h3>Peixes Frescos</h3>
-                    <p>Tambaqui, Tilápia, Cioba, Pescada e muito mais.</p>
-                </div>
+                <i class="fas fa-user-ninja"></i>
+                <h3>Jiu-Jitsu Adulto</h3>
+                <p>Técnicas avançadas, condicionamento físico e defesa pessoal para homens e mulheres.</p>
             </div>
-
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?auto=format&fit=crop&w=800&q=80">
-                <div class="card-content">
-                    <h3>Camarões</h3>
-                    <p>Camarões frescos e congelados de alta qualidade.</p>
-                </div>
+                <i class="fas fa-child"></i>
+                <h3>Jiu-Jitsu Kids</h3>
+                <p>Foco em disciplina, anti-bullying e coordenação motora para os pequenos campeões.</p>
             </div>
-
             <div class="card">
-                <img src="https://images.unsplash.com/photo-1559737558-2f5a35f4523b?auto=format&fit=crop&w=800&q=80">
-                <div class="card-content">
-                    <h3>Filés e Cortes</h3>
-                    <p>Produtos limpos e prontos para o preparo.</p>
-                </div>
+                <i class="fas fa-trophy"></i>
+                <h3>Competição</h3>
+                <p>Treinos específicos para quem deseja buscar o topo do pódio nos campeonatos.</p>
             </div>
-
         </div>
+    </section>
 
-    </div>
-
-</section>
-
-<section class="section">
-
-    <div class="container">
-
+    <!-- Horários -->
+    <section id="horarios" style="background-color: var(--bg-gray);">
         <div class="section-title">
-            <h2>Por Que Escolher Nossa Peixaria?</h2>
+            <h2>Grade de Horários</h2>
         </div>
-
-        <div class="features">
-
-            <div class="feature">
-                <span>❄️</span>
-                <h3>Conservação Ideal</h3>
-                <p>Controle de temperatura para máxima qualidade.</p>
-            </div>
-
-            <div class="feature">
-                <span>🐟</span>
-                <h3>Produtos Frescos</h3>
-                <p>Seleção diária dos melhores pescados.</p>
-            </div>
-
-            <div class="feature">
-                <span>🚚</span>
-                <h3>Entrega Local</h3>
-                <p>Atendimento rápido para Umirim e região.</p>
-            </div>
-
-            <div class="feature">
-                <span>⭐</span>
-                <h3>Atendimento Premium</h3>
-                <p>Compromisso com qualidade e satisfação.</p>
-            </div>
-
+        <div class="horarios-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Horário</th>
+                        <th>Segunda</th>
+                        <th>Terça</th>
+                        <th>Quarta</th>
+                        <th>Quinta</th>
+                        <th>Sexta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>06:00</td>
+                        <td>Jiu-Jitsu</td>
+                        <td>-</td>
+                        <td>Jiu-Jitsu</td>
+                        <td>-</td>
+                        <td>Jiu-Jitsu</td>
+                    </tr>
+                    <tr>
+                        <td>18:00</td>
+                        <td>Kids</td>
+                        <td>Kids</td>
+                        <td>Kids</td>
+                        <td>Kids</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>19:30</td>
+                        <td>Adulto</td>
+                        <td>Adulto</td>
+                        <td>Adulto</td>
+                        <td>Adulto</td>
+                        <td>No-Gi</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
+    </section>
 
-    </div>
+    <!-- Contato -->
+    <section id="contato">
+        <div class="section-title">
+            <h2>Fale Conosco</h2>
+        </div>
+        <div class="contato-info">
+            <div class="info-box">
+                <h3>Onde Estamos</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Centro, Uruburetama - CE</p>
+                <p>Próximo aos principais pontos da cidade.</p>
+                <br>
+                <h3>Siga-nos</h3>
+                <p><i class="fab fa-instagram"></i> @loyalty_uruburetama</p>
+            </div>
+            <div class="info-box">
+                <h3>Horário de Funcionamento</h3>
+                <p>Segunda a Sexta: 06:00h - 22:00h</p>
+                <p>Sábados: Treinos Livres / Open Mat</p>
+            </div>
+        </div>
+    </section>
 
-</section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Loyalty Jiu-Jitsu Uruburetama. Todos os direitos reservados.</p>
+        <p><small>Desenvolvido com foco na Lealdade.</small></p>
+    </footer>
 
-<section id="contato" class="section cta">
-
-    <div class="container">
-
-        <h2>Faça Seu Pedido Agora</h2>
-
-        <p>
-            Entre em contato pelo WhatsApp e receba atendimento rápido.
-        </p>
-
-        <a href="https://wa.me/5585999999999" class="btn">
-            Chamar no WhatsApp
-        </a>
-
-    </div>
-
-</section>
-
-<footer>
-    <p>
-        © 2026 Peixaria Mar do Sertão • Umirim - Ceará
-    </p>
-</footer>
+    <!-- WhatsApp Button -->
+    <a href="https://api.whatsapp.com/send?phone=5585999999999&text=Olá! Gostaria de saber mais sobre as aulas na Loyalty." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
